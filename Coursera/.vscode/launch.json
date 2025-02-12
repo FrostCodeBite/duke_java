@@ -1,0 +1,91 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "ParsingExportData.App",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Part1",
+            "request": "launch",
+            "mainClass": "StringsThirdAssignments.Part1",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Part3",
+            "request": "launch",
+            "mainClass": "StringsSecondAssignments.Part3",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Part2",
+            "request": "launch",
+            "mainClass": "StringsSecondAssignments.Part2",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Part1",
+            "request": "launch",
+            "mainClass": "StringsSecondAssignments.Part1",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Part4",
+            "request": "launch",
+            "mainClass": "StringsFirstAssignments.Part4",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Part3",
+            "request": "launch",
+            "mainClass": "StringsFirstAssignments.Part3",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Part2",
+            "request": "launch",
+            "mainClass": "StringsFirstAssignments.Part2",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Part1",
+            "request": "launch",
+            "mainClass": "StringsFirstAssignments.Part1",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Coursera_2e052e04"
+        },
+        {
+            "type": "java",
+            "name": "PerimeterAssignmentRunner",
+            "request": "launch",
+            "mainClass": "Task1.PerimeterAssignmentRunner",
+            "projectName": "Coursera_2e052e04"
+        }
+    ]
+}
