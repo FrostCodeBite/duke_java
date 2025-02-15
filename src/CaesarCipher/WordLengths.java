@@ -19,6 +19,10 @@ public class WordLengths {
                 newWord = word.substring(1, word.length());
             } 
 
+            if (wordCount == 0) {
+                return wordArray;
+            }
+
             if (Character.isLetter(word.charAt(word.length()-1)) == false) {
                 wordCount--;
                 newWord = newWord.substring(0, newWord.length()-1);
