@@ -1,4 +1,4 @@
-package ImplementingCaesarCipher;
+package CaesarCipher;
 
 public class WordPlay {
 

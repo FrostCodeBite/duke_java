@@ -1,4 +1,4 @@
-package BreakingCaeserCipher;
+package CaesarCipher;
 
 import edu.duke.FileResource;
 
