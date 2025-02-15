@@ -12,6 +12,7 @@ public class WordLengths {
             String newWord = word;
 
             int wordCount = word.length();
+            
 
             if (Character.isLetter(word.charAt(0)) == false) {
                 wordCount--;

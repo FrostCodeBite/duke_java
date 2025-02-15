@@ -36,9 +36,7 @@ public class CaesarCipher {
     }
 
     public static void testEncrypt() {
-        String result = encrypt("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!\n" + //
-                        "\n" + //
-                        "", 15);
+        String result = encrypt("Can you imagine life WITHOUT the internet AND computers in your pocket?", 15);
         System.err.println(result);
         String result2 = encrypt("First Legion", 23);
         System.err.println(result2);
@@ -51,7 +49,7 @@ public class CaesarCipher {
     public static void testCaesar() {
         FileResource fr = new FileResource();
         String message = fr.asString();
-        int key = 17;
+        int key = 15;
         String encrypted = encrypt(message, key);
         System.out.println("key is " + key + "\n" + encrypted);
     }
@@ -76,16 +74,14 @@ public class CaesarCipher {
     }
 
     public static void testEncryptTwoKeys() {
-        String result = encryptTwoKeys("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!\n" + //
-                        "\n" + //
-                        "", 8, 21);
+        String result = encryptTwoKeys("Hfs cpwewloj loks cd Hoto kyg Cyy.", 14, 24);
         System.err.println(result);
     }
 
     public static void main(String[] args) {
         // testEncrypt();
-        testCaesar();
-        // testEncryptTwoKeys();
+        // testCaesar();
+        testEncryptTwoKeys();
     }
 
 }
