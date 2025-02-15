@@ -1,4 +1,4 @@
-package ImplementingCaesarCipher;
+package BreakingCaeserCipher;
 
 import edu.duke.FileResource;
 
@@ -76,16 +76,15 @@ public class CaesarCipher {
     }
 
     public static void testEncryptTwoKeys() {
-        String result = encryptTwoKeys("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!\n" + //
-                        "\n" + //
-                        "", 8, 21);
+        String result = encryptTwoKeys("Glgh upx Yocns bcpg gpkf yglky atygh yclu", 26-2, 26-20);
         System.err.println(result);
     }
 
     public static void main(String[] args) {
         // testEncrypt();
-        testCaesar();
-        // testEncryptTwoKeys();
+        // testCaesar();
+        testEncryptTwoKeys();
     }
 
 }
+
