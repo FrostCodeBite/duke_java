@@ -58,7 +58,8 @@ public class WordFrequencies {
         }
 
         System.err.println("Number of unique words: "+myWords.size());
-        System.err.println("The word that occurs most often and its count are: "+word+" "+maxIndex);
+
+        System.err.println("The word that occurs most often and its count are: \""+word+"\" "+maxIndex);
 
         return maxIndex;
     }
