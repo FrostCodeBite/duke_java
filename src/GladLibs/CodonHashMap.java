@@ -3,7 +3,7 @@ package GladLibs;
 import java.util.HashMap;
 
 public class CodonHashMap {
-    private static HashMap<String, Integer> map;
+    private HashMap<String, Integer> map;
 
     public CodonHashMap() {
         map = new HashMap<String, Integer>();
@@ -51,7 +51,7 @@ public class CodonHashMap {
         } 
     }
 
-    public static void tester() {
+    public void tester() {
         CodonHashMap map = new CodonHashMap();
         String dna = "CAACCTTTAAAAGGAAGAAATCGCAGCAGCCCAGAACCAACTGCATAACATACAACCTTTAAAAGGAAGAAATCGCAGCAGCCCAGAACCAACTGCATAACATACAACCTTTAAAAGGAAGAAATCGCACCAGCCCAGAATCAACTGCATAACATACAAACTTTAAAAGGAAGAAATCTAACATACAACCTTTAAAAGGAAGAAATCGCACCAGCCCAGAATCAACTGCATAACATACAAACTTTAAAAGGAAGAAATCCAACCTTTAAAAGGAAGAAATCGCAGCAGCCCAGAACCAACTGCATAACATACAACCTTTAAAAGGAAGAAATCGCAGCAGCCCAGAACCAACTGCATAACATACAACCTTTAAAAGGAAGAAATCGCACCAGCCCAGAATCAACTGCATAACATACAAACTTTAAAAGGAAGAAATC";
         int start = 0;
@@ -71,11 +71,7 @@ public class CodonHashMap {
     }
 
     public static void main(String[] args) {
-        tester();
+        CodonHashMap obj = new CodonHashMap();
+        obj.tester();
     }
-
-    public static HashMap<String, Integer> getMap() {
-        return map;
-    }
-
 }

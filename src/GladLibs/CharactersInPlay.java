@@ -5,10 +5,15 @@ import java.util.ArrayList;
 import edu.duke.FileResource;
 
 public class CharactersInPlay {
-    private static ArrayList<String> characterList = new ArrayList<String>();
-    private static ArrayList<Integer> characterCount = new ArrayList<Integer>();
+    private ArrayList<String> characterList;
+    private ArrayList<Integer> characterCount;
 
-    public static void update(String person) {
+    public CharactersInPlay() {
+        characterList = new ArrayList<String>();
+        characterCount = new ArrayList<Integer>();
+    }
+
+    public void update(String person) {
 
         int index = characterList.indexOf(person);
 
@@ -23,7 +28,7 @@ public class CharactersInPlay {
         }
     }
 
-    public static void findAllCharacters() {
+    public void findAllCharacters() {
 
         if (characterList != null || characterCount != null) {
             characterList.clear();
@@ -43,7 +48,7 @@ public class CharactersInPlay {
         }
     }
 
-    public static void charactersWithNumParts(int num1, int num2) {
+    public void charactersWithNumParts(int num1, int num2) {
 
         for (int i = 0; i < characterList.size(); i++) {
             if (characterCount.get(i) >= num1 && characterCount.get(i) <= num2) {
@@ -52,14 +57,15 @@ public class CharactersInPlay {
         }  
     }
 
-    public static void tester() {
+    public void tester() {
         findAllCharacters();
         charactersWithNumParts(10, 15);
         
     }
 
     public static void main(String[] args) {
-        tester();
+        CharactersInPlay obj = new CharactersInPlay();
+        obj.tester();
     }
 
 }

@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import edu.duke.FileResource;
 
 public class WordFrequencies {
-    private static ArrayList<String> myWords = new ArrayList<String>();
-    private static ArrayList<Integer> myFreqs = new ArrayList<Integer>();
+    private ArrayList<String> myWords;
+    private ArrayList<Integer> myFreqs;
 
-    public static void WordFrequencies() {
+    public WordFrequencies() {
         myWords = new ArrayList<String>();
         myFreqs = new ArrayList<Integer>();
     }
 
-    public static void findUnique() {
+    public void findUnique() {
         
         if (myWords != null || myFreqs != null) {
             myWords.clear();
@@ -40,12 +40,12 @@ public class WordFrequencies {
         }
     }
 
-    public static void tester() {
+    public void tester() {
         findUnique();
         findIndexOfMax();
     }
 
-    public static int findIndexOfMax() {
+    public int findIndexOfMax() {
         int maxIndex = 0;
         String word = "";
 
@@ -65,6 +65,7 @@ public class WordFrequencies {
     }
 
     public static void main(String[] args) {
-        tester();
+        WordFrequencies obj = new WordFrequencies();
+        obj.tester();
     }
 }
