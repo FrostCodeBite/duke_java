@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import edu.duke.DirectoryResource;
-import edu.duke.ImageResource;
 
 public class WordsInFiles {
     private HashMap<String, String> fileHashMap;
