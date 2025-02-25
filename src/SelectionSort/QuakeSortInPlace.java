@@ -39,7 +39,7 @@ public class QuakeSortInPlace {
     public void testSort() {
         EarthQuakeParser parser = new EarthQuakeParser(); 
         //String source = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.atom";
-        String source = "earthquake_data/earthQuakeDataDec6sample1.atom";
+        String source = "earthquake_data/earthQuakeDataWeekDec6sample1.atom";
         //String source = "data/nov20quakedata.atom";
         ArrayList<QuakeEntry> list  = parser.read(source);  
        
@@ -50,9 +50,9 @@ public class QuakeSortInPlace {
         sortByMagnitudeWithBubbleSortWithCheck(list);
         // sortByMagnitudeWithCheck(list);
         // sortByLargestDepthWithCheck(list);
-        for (QuakeEntry qe: list) { 
-            System.out.println(qe);
-        } 
+        // for (QuakeEntry qe: list) { 
+        //     System.out.println(qe);
+        // } 
         
     }
     
@@ -193,7 +193,7 @@ public class QuakeSortInPlace {
 
             passes++;
 
-            if (passes == 50) {
+            if (passes == 70) {
                 break;
             }
             if (checkInSortedOrderDepth(in)) {
