@@ -130,25 +130,21 @@ public class EarthQuakeClient {
 
         for (QuakeEntry qe : quakeData) {
             String currPhrase = "";
-            try {
-                String currAnyPhase = qe.getInfo();
-                String currStartPhase = qe.getInfo().substring(0, qe.getInfo().indexOf(","));
-                String currEndPhase = qe.getInfo().substring(qe.getInfo().indexOf(",")+2);
+            String currAnyPhase = qe.getInfo();
+            String currStartPhase = qe.getInfo().substring(0, qe.getInfo().lastIndexOf(" "));
+            String currEndPhase = qe.getInfo().substring(qe.getInfo().lastIndexOf(" ")+1);
 
-                if (where.equals("start")) {
-                    currPhrase = currStartPhase;
-                } else if (where.equals("end")) {
-                    currPhrase = currEndPhase;
-                } else {
-                    currPhrase = currAnyPhase;
-                }
-    
-                if (currPhrase.contains(phrase)) {
-                    answer.add(qe);
-                }
-            } catch (Exception e) {
-                // TODO: handle exception
-            }            
+            if (where.equals("start")) {
+                currPhrase = currStartPhase;
+            } else if (where.equals("end")) {
+                currPhrase = currEndPhase;
+            } else {
+                currPhrase = currAnyPhase;
+            }
+
+            if (currPhrase.contains(phrase)) {
+                answer.add(qe);
+            }           
         }
 
         return answer;
@@ -161,7 +157,7 @@ public class EarthQuakeClient {
         ArrayList<QuakeEntry> list  = parser.read(source);
         System.out.println("read data for "+list.size()+" quakes");
 
-        String where = "any";
+        String where = "end";
         String phrase = "Can";
         ArrayList<QuakeEntry> answer = filterByPhrase(list, where, phrase);
         for (QuakeEntry qe : answer) {
@@ -175,12 +171,12 @@ public class EarthQuakeClient {
         // obj.bigQuakes();
         // obj.closeToMe();
         // obj.quakesOfDepth();
-        // obj.quakesByPhrase();
+        obj.quakesByPhrase();
 
         ClosestQuakes obj2 = new ClosestQuakes();
         // obj2.findClosestQuakes();
 
         LargestQuakes obj3 = new LargestQuakes();
-        obj3.findLargestQuakes();
+        // obj3.findLargestQuakes();
     }
 }
