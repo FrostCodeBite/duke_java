@@ -18,13 +18,14 @@ public class Tester {
         FileResource fr = new FileResource();
 		String st = fr.asString();
 		st = st.replace('\n', ' ');
-		MarkovOne markov = new MarkovOne();
+        // String st = "this is a test yes this is a test";
+		MarkovModel markov = new MarkovModel(1);
 		markov.setTraining(st);
-        ArrayList<String> list = markov.getFollows("th");
+        ArrayList<String> list = markov.getFollows("o");
 		for (int i = 0; i < list.size(); i++) {
 			System.err.println(i+" : "+list.get(i));
 		}
-        System.err.println(list.size());
+        System.err.println("Total number of list: "+list.size());
     }
 
     public static void main(String[] args) {

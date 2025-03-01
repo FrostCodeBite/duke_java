@@ -7,7 +7,7 @@ public class MarkovOne extends AbstractMarkovModel{
             //TODO Auto-generated constructor stub
         }
     
-        public String getRandomText(int numChars){
+        public String getRandomText(int numChars){ 
 		if (myText == null){
 			return "";
 		}

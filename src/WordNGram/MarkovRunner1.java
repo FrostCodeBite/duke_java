@@ -7,7 +7,7 @@ import edu.duke.FileResource;
  * @version (a version number or a date)
  */
 
-public class MarkovRunner {
+public class MarkovRunner1 {
     public void runModel(IMarkovModel markov, String text, int size){ 
         markov.setTraining(text); 
         System.out.println("running with " + markov); 
@@ -61,7 +61,7 @@ public class MarkovRunner {
     } 
 
     public static void main(String[] args) {
-        MarkovRunner obj = new MarkovRunner();
+        MarkovRunner1 obj = new MarkovRunner1();
         // obj.runMarkov();
         obj.runMarkovTwo();
     }

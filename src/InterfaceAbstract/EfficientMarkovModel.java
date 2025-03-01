@@ -37,9 +37,13 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
 
     public void buildMap() {
 
-        for (int i = 0; i < myText.length()-num; i++) {
+        for (int i = 0; i <= myText.length()-num; i++) {
             String key = myText.substring(i, i + nChara);
-            String follow = getFollowingCharacter(i);
+            String follow = "";
+            try {
+                follow = getFollowingCharacter(i);
+            } catch (Exception e) {}
+            
 
             if (hm.containsKey(key)) {
                 hm.get(key).add(follow);
@@ -65,7 +69,7 @@ public class EfficientMarkovModel extends AbstractMarkovModel {
             }
             System.err.println(key+" : "+hm.get(key));
         }
-        System.err.println("The total number of keys in the HashMap are: "+hm.size()+1);
+        System.err.println("The total number of keys in the HashMap are: "+hm.size());
         System.err.println("\""+largestKey+"\" is the key that have the maximum size value with size of "+largetNum);
     }
 

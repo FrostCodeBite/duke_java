@@ -28,10 +28,10 @@ public class MarkovRunnerWithInterface {
 		String st = fr.asString();
 		st = st.replace('\n', ' ');
 		int size = 200;
-		int seed = 200;
+		int seed = 1024;
 		
-        // MarkovZero mz = new MarkovZero();
-        // runModel(mz, st, size, seed);
+        MarkovZero mz = new MarkovZero();
+        runModel(mz, st, size, seed);
     
         // MarkovOne mOne = new MarkovOne();
         // runModel(mOne, st, size, seed);
@@ -47,11 +47,14 @@ public class MarkovRunnerWithInterface {
     }
 
 	public void testHashMap() {
-		String st = "yes-this-is-a-thin-pretty-pink-thistle";
-		int size = 50;
-		int seed = 42;
+		FileResource fr = new FileResource();
+		String st = fr.asString();
+		st = st.replace('\n', ' ');
+		// String st = "yes-this-is-a-thin-pretty-pink-thistle";
+		int size = 200;
+		int seed = 531;
 
-		EfficientMarkovModel eModel = new EfficientMarkovModel(2);
+		EfficientMarkovModel eModel = new EfficientMarkovModel(5);
 		runModel(eModel, st, size, seed);
 		eModel.printHashMapInfo();
 	}
@@ -92,8 +95,8 @@ public class MarkovRunnerWithInterface {
 	public static void main(String[] args) {
 		MarkovRunnerWithInterface obj = new MarkovRunnerWithInterface();
 		// obj.runMarkov();
-		// obj.testHashMap();
-		obj.compareMethods();
+		obj.testHashMap();
+		// obj.compareMethods();
 	}
 	
 }
