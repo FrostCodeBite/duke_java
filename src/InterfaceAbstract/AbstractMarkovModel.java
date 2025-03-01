@@ -19,7 +19,7 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
     }
     
     public void setTraining(String s) {
-        myText = s.trim();
+        myText = s.trim(); 
     }
 
     public void setRandom(int seed){
