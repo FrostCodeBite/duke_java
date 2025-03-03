@@ -76,8 +76,8 @@ public class FirstRatings {
         System.err.println("There are "+ maxDirectorName +" directors that directed "+maxDirectorValue+" such movie");
     }
 
-    public ArrayList<Rater> loadRaters(String filename) {
-        ArrayList<Rater> raterList = new ArrayList<Rater>();
+    public ArrayList<EfficientRater> loadRaters(String filename) {
+        ArrayList<EfficientRater> raterList = new ArrayList<EfficientRater>();
 
         FileResource fr = new FileResource(filename);
         CSVParser parser = fr.getCSVParser();
@@ -86,14 +86,14 @@ public class FirstRatings {
             String movie_id = record.get("movie_id");
             double ratingScore = Double.parseDouble(record.get("rating"));
 
-            Rater rater = new Rater(rater_id);
+            EfficientRater rater = new EfficientRater(rater_id);
             rater.addRating(movie_id, ratingScore);
             
             if (!hasRater(raterList, rater_id)) {
                 raterList.add(rater);
             } else {
                 for (int i = 0 ; i < raterList.size(); i++) {
-                    Rater r = raterList.get(i); 
+                    EfficientRater r = raterList.get(i); 
                     if (r.getID().equals(rater_id)) {
                         r.addRating(movie_id, ratingScore);
                         raterList.set(i, r);
@@ -105,10 +105,10 @@ public class FirstRatings {
         return raterList;
     }
 
-    public boolean hasRater(ArrayList<Rater> raterList, String rater_id) {
+    public boolean hasRater(ArrayList<EfficientRater> raterList, String rater_id) {
         boolean exist = false;
         // IF RATER EXIST IN ARRAYLIST RETURN TRUE;
-        for (Rater rater: raterList) {
+        for (EfficientRater rater: raterList) {
             String raterID = rater.getID();
             if (raterID.equals(rater_id)) {
                 return true;
@@ -124,7 +124,7 @@ public class FirstRatings {
         ArrayList<String> uniqueMovie = new ArrayList<String>();
 
         String fileName = "data/ratings.csv";
-        ArrayList<Rater> raterList = loadRaters(fileName);
+        ArrayList<EfficientRater> raterList = loadRaters(fileName);
         System.err.println("Total Number of Raters: "+raterList.size());
 
         String raterID = "193";
