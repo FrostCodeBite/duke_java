@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class EfficientRater {
+public class EfficientRater implements Rater{
     private String myID;
     HashMap<String,Rating> movieRatingHM; 
 
@@ -15,12 +15,8 @@ public class EfficientRater {
         movieRatingHM.put(item, rate);
     }
 
-    public boolean hasRating(String item) {
-        if (movieRatingHM.containsKey(item)) {
-            return true;
-        }
-        
-        return false;
+    public boolean hasRating(String item) {        
+        return movieRatingHM.containsKey(item);
     }
 
     public String getID() {
@@ -41,5 +37,11 @@ public class EfficientRater {
         }
         
         return -1;
+    }
+
+    @Override
+    public int numRatings() {
+        // TODO Auto-generated method stub
+        return movieRatingHM.values().size();
     }
 }

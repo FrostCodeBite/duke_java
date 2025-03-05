@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public interface Rater {
 
@@ -13,4 +14,6 @@ public interface Rater {
     public int numRatings();
 
     public ArrayList<String> getItemsRated();
+
+    public HashMap<String, Rating> getaRating();
 }
