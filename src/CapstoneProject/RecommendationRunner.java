@@ -31,21 +31,16 @@ public class RecommendationRunner implements Recommender{
             System.out.println("No matching movies were found");
         } else {
             System.err.println("");
-            String header = ("<h1>Recommendated Movies are: </h1><table> <tr> <th>Movie Title</th> <th>Rating Value</th>  <th>Genres</th> </tr>");
+            String header = ("<h1>Recommendated Movies are: </h1><table> <tr> <th>Movie Title</th> <th>Rating Value</th>  <th>Genres</th> <th>Poster</th>  </tr>");
             String body = "";
-            for (int i = 0; i < 20; i++ ) {
+            for (int i = 0; i < 10; i++ ) {
                 Rating rating = similarRatings.get(i);
                 body += "<tr> <td>" + MovieDatabase.getTitle(rating.getItem()) + "</td> <td>" 
                 + Double.toString(rating.getValue()) + "</td> <td>" + MovieDatabase.getGenres(rating.getItem())
-                + "</td> </tr> ";
+                + "</td> <td><img src=\""+MovieDatabase.getPoster(rating.getItem()) +"\"></td></tr> ";
             }
             System.out.println(header  + body + "</table>");
         }
 		
-    }
-
-    public static void main(String[] args) {
-        RecommendationRunner obj = new RecommendationRunner();
-        obj.printRecommendationsFor("356");
     }
 }

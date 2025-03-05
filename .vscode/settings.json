@@ -1,0 +1,17 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "src/CapstoneProject",
+        "src/GeneratingRandomText",
+        "src/InterfaceAbstract",
+        "src/SearchingEarthquakeData",
+        "src/SelectionSort",
+        "src/SortingAtScale",
+        "src/WordGram",
+        "src/WordNGram"
+    ],
+    "java.project.referencedLibraries": [
+        "/Users/sopagnapheakim/Documents/GitHub/duke_java/lib/apache-csv.jar",
+        "/Users/sopagnapheakim/Documents/GitHub/duke_java/lib/courserajava.jar"
+    ]
+}
