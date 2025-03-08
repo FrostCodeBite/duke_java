@@ -24,7 +24,7 @@ public class RecommendationRunner implements Recommender{
         FourthRatings fourthRatings = new FourthRatings ();
         
         int numSimilarRaters = 50; // variable
-        int minNumOfRatings = 5; // variable
+        int minNumOfRatings = 2; // variable
         ArrayList<Rating> similarRatings = fourthRatings.getSimilarRatings(webRaterID, numSimilarRaters, minNumOfRatings);
         
         if (similarRatings.size() == 0) {
@@ -42,5 +42,10 @@ public class RecommendationRunner implements Recommender{
             System.out.println(header  + body + "</table>");
         }
 		
+    }
+
+    public static void main(String[] args) {
+        RecommendationRunner obj = new RecommendationRunner();
+        obj.printRecommendationsFor("123");
     }
 }

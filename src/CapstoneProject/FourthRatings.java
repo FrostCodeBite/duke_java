@@ -106,25 +106,41 @@ public class FourthRatings {
         ArrayList<String> movies = MovieDatabase.filterBy(new TrueFilter());
 
         for (int i = 0; i < movies.size(); i++) {
-            String movie = movies.get(i);
+            String barcode = movies.get(i);
             double totalWeight = 0.0;
             double weight = 0.0;
             int n = 0;
 
             for (int j = 0; j < numSimilarRaters; j++) {
-                String rater_id = raterSimilar.get(j).getItem();
-                double similarScore = raterSimilar.get(j).getValue();
+                //CHECK IF THERE IS ANY SIMILARITY, IF NO RETURN EMPTY ARRAYLIST 
+                if (raterSimilar.size() == 0) {
+                    return ratings;
+                }
+                String rater_id = "";
+                double similarScore = 0.0;
+                //TRY CATCH TO PREVENT PUTING HIGH NUMBER OF NumSimilarRaters WHICH EXCEED NUMBER OF RaterSimilar ARRAYLIST
+                try {
+                    rater_id = raterSimilar.get(j).getItem();
+                    similarScore = raterSimilar.get(j).getValue();
+                } catch (Exception e) {
+                    break;
+                }
                 double ratingScore = 0.0;
-                if (RaterDatabase.getRater(rater_id).getRating(movie) != -1) {
-                    ratingScore = RaterDatabase.getRater(rater_id).getRating(movie);
+                if (RaterDatabase.getRater(rater_id).getRating(barcode) != -1) {
+                    ratingScore = RaterDatabase.getRater(rater_id).getRating(barcode);
+                    // FORMULAR: WEIGHT = SUM(AVGRATING*SIMILARRATING)/TOTAL NUMBER OF RATERS;
                     weight += similarScore * ratingScore;
                     n++;
                 }            
             }
+            //WEIGHT ONLY CALCULATE IF THERE IS ENOUGH MININAL NUMBER OF RATERS
             if (n >= minimalRaters) {
                 totalWeight = weight/n;
             }
-            ratings.add(new Rating(movie, totalWeight));
+            //ONLY ADD BARCODE THAT HAS MORE THAN 0 SIMILARITY SCORE
+            if (totalWeight != 0) {
+                ratings.add(new Rating(barcode, totalWeight));
+            }
         }
 
         Collections.sort(ratings, Collections.reverseOrder());
